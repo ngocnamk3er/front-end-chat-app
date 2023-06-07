@@ -14,10 +14,10 @@ const ChatProvider = ({ children }) => {
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     setUser(userInfo);
-
+    console.log("in use effect chat provider");
     if (!userInfo) history.push("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [history]);
+  }, []);
 
   return (
     <ChatContext.Provider
