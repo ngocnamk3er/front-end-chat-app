@@ -49,5 +49,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://chat-app-back-end-ngocnamk3er-gmailcom.vercel.app/"
+  "proxy": "https://localhost:5000"
 }
+
