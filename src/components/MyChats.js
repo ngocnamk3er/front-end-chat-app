@@ -9,12 +9,15 @@ import GroupChatModal from "./miscellaneous/GroupChatModal";
 import { Button } from "@chakra-ui/react";
 import { ChatState } from "../Context/ChatProvider";
 import configs from '../config/serverURL'
+import userEvent from "@testing-library/user-event";
 
 const MyChats = ({ fetchAgain }) => {
 
   const [loggedUser, setLoggedUser] = useState(JSON.parse(localStorage.getItem("userInfo")))
 
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
+
+  console.log(user)
 
   const toast = useToast();
 
@@ -44,7 +47,7 @@ const MyChats = ({ fetchAgain }) => {
     console.log(">>>: in useEffect in mychat")
     fetchChats();
     // eslint-disable-next-line
-  }, []);
+  }, [fetchAgain]);
 
   return (
     <Box
